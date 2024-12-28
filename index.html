@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice Kirchhoff</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 id="kirchhoffTitle">Calcolatrice <span class="underlined">Kirchhoff</span></h1>
+        <form class="form">
+            <div class="section">
+                <h2>Legge delle Correnti</h2>
+                <p><strong>Inserisci i valori delle correnti</strong> (in Ampere) nei campi sottostanti:</p>
+
+                <label for="i1">Corrente I₁ (A):</label>
+                <input type="number" id="i1" required placeholder="Ad esempio: 2.5">
+
+                <label for="i2">Corrente I₂ (A):</label>
+                <input type="number" id="i2" required placeholder="Ad esempio: -1.5">
+
+                <label for="i3">Corrente I₃ (A):</label>
+                <input type="number" id="i3" required placeholder="Ad esempio: 3">
+            </div>
+
+            <div class="section">
+                <h2>Legge delle Tensioni</h2>
+                <p><strong>Inserisci le tensioni</strong> (in Volt) nei campi sottostanti:</p>
+
+                <label for="v1">Tensione V₁ (V):</label>
+                <input type="number" id="v1" required placeholder="Ad esempio: 10">
+
+                <label for="v2">Tensione V₂ (V):</label>
+                <input type="number" id="v2" required placeholder="Ad esempio: 5">
+            </div>
+
+            <button type="submit">Calcola</button>
+        </form>
+        <p id="result"></p>
+        <p class="description">
+            <strong>Come funziona?</strong><br>
+            La calcolatrice calcola la somma delle correnti in un nodo (Legge delle Correnti) e la differenza tra due tensioni in un circuito (Legge delle Tensioni).
+        </p>
+
+        <!-- Spiegazione popup -->
+        <div id="kirchhoffExplanation" class="popup">
+            <p><strong>Cos'è la Legge di Kirchhoff?</strong><br>
+            La Legge delle Correnti di Kirchhoff afferma che la somma delle correnti che entrano in un nodo di un circuito è uguale alla somma delle correnti che escono da quel nodo.<br>
+            La Legge delle Tensioni di Kirchhoff dice che la somma algebrica delle tensioni in un percorso chiuso (circuito) è uguale a zero. In parole semplici, le perdite di energia nelle resistenze sono compensate dalle fonti di energia (batterie o generatori).</p>
+            <button onclick="closePopup()">Chiudi</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

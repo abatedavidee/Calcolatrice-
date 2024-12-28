@@ -1,0 +1,152 @@
+/* Impostazioni di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9; /* Sfondo chiaro per contrasto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Permette lo scroll */
+    color: #2c3e50;
+}
+
+.calculator-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 15px;
+    padding: 40px; /* Maggiore padding per più spazio interno */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Consente lo scroll verticale se il contenuto è troppo grande */
+    max-height: 90vh; /* Limita l'altezza per evitare che esca dallo schermo */
+    padding-bottom: 50px; /* Aggiunta di padding per evitare che il contenuto si sovrapponga al bordo */
+}
+
+h1 {
+    font-size: 2.6em;
+    color: #34495e; /* Colore titolo */
+    text-align: center;
+    margin-bottom: 30px; /* Maggiore spazio sotto il titolo */
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.underlined {
+    text-decoration: underline; /* Sottolinea la parola "Kirchhoff" */
+    color: #e67e22; /* Colore arancione per la sottolineatura */
+}
+
+h2 {
+    font-size: 1.7em;
+    color: #e67e22; /* Colore arancione per i titoli */
+    margin-bottom: 20px; /* Maggiore spazio sotto i titoli delle sezioni */
+}
+
+label {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 10px; /* Maggiore spazio tra l'etichetta e il campo di input */
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2em;
+    margin-bottom: 20px; /* Maggiore spazio tra il campo di input e quello successivo */
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e67e22;
+    background-color: #fdf2e9;
+    box-shadow: 0 0 8px rgba(231, 126, 34, 0.3);
+}
+
+button {
+    background-color: #1abc9c; /* Colore verde acqua */
+    color: white;
+    font-size: 1.3em;
+    padding: 16px; /* Maggiore padding nei bottoni */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    margin-top: 20px; /* Aggiungi margine tra i bottoni e gli altri elementi */
+}
+
+button:hover {
+    background-color: #16a085; /* Verde più scuro al passaggio del mouse */
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #1abc9c;
+    transform: translateY(3px);
+}
+
+.popup {
+    display: none; /* La casella di testo è nascosta inizialmente */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.popup p {
+    font-size: 1.2em;
+    color: #34495e;
+}
+
+.popup button {
+    background-color: #e67e22;
+    color: white;
+    font-size: 1.2em;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.popup button:hover {
+    background-color: #d35400;
+}
+
+/* Media Query per schermi più piccoli */
+@media screen and (max-width: 480px) {
+    .calculator-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    input, button {
+        font-size: 1.1em;
+    }
+}
